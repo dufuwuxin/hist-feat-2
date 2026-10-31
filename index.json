@@ -1,0 +1,79 @@
+{
+ "engine": "shard_features",
+ "generated": "2026-10-31T16:40:16+08:00",
+ "source": "/tmp/feat_parts",
+ "source_files": 8,
+ "feature_cols": [
+  "open_gap",
+  "intraday_ret",
+  "intraday_range",
+  "close_position",
+  "tail_strength",
+  "morning_strength",
+  "am_pm_split",
+  "max_drawdown_intraday",
+  "max_rise_intraday",
+  "vol_share_first30",
+  "vol_share_last30",
+  "vwap_dev",
+  "up_min_ratio",
+  "big_move_min_count",
+  "ret_autocorr",
+  "realized_vol",
+  "gap_fill",
+  "limitup_touch"
+ ],
+ "feature_dim": 18,
+ "dtype": "float32",
+ "compression": "zstd",
+ "years": [
+  2010,
+  2011,
+  2012,
+  2013,
+  2014,
+  2015,
+  2016,
+  2017
+ ],
+ "rows": 1734541,
+ "bytes": 89585952,
+ "shards": [
+  {
+   "file": "feat/2016.parquet",
+   "year": 2016,
+   "rows": 701369,
+   "bytes": 35947933,
+   "sha256": "8edf70bfaf118f744db10b4d5bf4c2b14d1c6f7ed6ce0d6dfe1fa69b4538705a",
+   "symbols": 3031,
+   "date_min": "20160104",
+   "date_max": "20161230"
+  },
+  {
+   "file": "feat/2013.parquet",
+   "year": 2013,
+   "rows": 586035,
+   "bytes": 28855837,
+   "sha256": "2d527ed72305ef4f8c86fe0f301280ddce094f3723dd2d5ff15da0dbf883228c",
+   "symbols": 2467,
+   "date_min": "20130104",
+   "date_max": "20131231"
+  },
+  {
+   "file": "feat/2010.parquet",
+   "year": 2010,
+   "rows": 447137,
+   "bytes": 24782182,
+   "sha256": "951c0644f780ef7c937bf305e1e27ec1dc82244fcf19b611eb27e820df261c5a",
+   "symbols": 2030,
+   "date_min": "20100104",
+   "date_max": "20101231"
+  }
+ ],
+ "provenance": {
+  "source": "GitCode stocks0.01~stocks0.70 5min bar (2000-2025)",
+  "pipeline": "minute_features.py 18 维日内特征",
+  "note": "float64→float32 降精度；同一 (symbol,date) 跨仓重复时 keep first"
+ },
+ "repo": "dufuwuxin/hist-feat-2"
+}
